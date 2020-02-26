@@ -54,6 +54,7 @@ public class TestCommand extends Command {
 
         if (wasButtonPressed == true){
             Robot.testMotorOne.setSpeed(1);
+            System.out.print("BUTTON WAS PRESSED");
         }
     }
 
