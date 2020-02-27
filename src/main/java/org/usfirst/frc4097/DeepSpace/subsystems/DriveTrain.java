@@ -81,7 +81,6 @@ public class DriveTrain extends Subsystem {
 
     public void stopMotor(){
         differentialDrive.stopMotor();
-        print("hello");
     }
     @Override
     public void periodic() {
