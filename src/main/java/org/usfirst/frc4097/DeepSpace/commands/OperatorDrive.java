@@ -58,28 +58,25 @@ public class OperatorDrive extends Command {
         double zMultiplier = (ZMAX-ZMIN)/2;
         double zConstant = ZMAX-zMultiplier;
         double xValue = Robot.oi.drivestick.getRawAxis(0)*(speedConstant+speedMultiplier*sliderValue)*1.25;
-        double yValue = -1*Robot.oi.drivestick.getRawAxis(1)*(speedConstant+speedMultiplier*sliderValue);
+        double yValue = 1*Robot.oi.drivestick.getRawAxis(1)*(speedConstant+speedMultiplier*sliderValue);
         double zValue = Robot.oi.drivestick.getRawAxis(2)*(zConstant+zMultiplier*sliderValue);
         //Cardinal direction stuff to keep
         if (Robot.oi.drivestick.getPOV(0) != -1){
             //Robot.driveTrain.goToTargetAngle(Robot.oi.drivestick.getPOV(0));
         }
 
-        //Old cardinal direction stuff
-        /*else if (Robot.oi.drivestick.getRawButton(3)){
-            Robot.driveTrain.cardinal("E");
-        }
-        else if (Robot.oi.drivestick.getRawButton(4)){
-            Robot.driveTrain.cardinal("S");
-        }
-        else if (Robot.oi.drivestick.getRawButton(5)){
-            Robot.driveTrain.cardinal("W");
-        }*/
+
         else if ( Robot.oi.drivestick.getRawAxis(2) == -1 ||  Robot.oi.drivestick.getRawAxis(2) == 1){
             Robot.driveTrain.arcadeDrive(yValue, zValue);
         }
         else{
-            Robot.driveTrain.curvatureDrive(yValue, xValue);
+            if (yValue > 0){
+                Robot.driveTrain.curvatureDrive(yValue, -xValue);
+            }
+            else{
+                Robot.driveTrain.curvatureDrive(yValue, xValue);
+            }
+            
         }
     }
 
