@@ -53,6 +53,8 @@ public class LifterCommand extends Command {
 
         Robot.lifterMechanism.liftRobot(climbValue);
         
+        
+        
     }
 
     

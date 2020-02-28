@@ -49,7 +49,7 @@ public class BallSuckerCommand extends Command {
         //SLIDERMAX is the speed of the robot when the slider is all
         //the way forwards
         double suckValue = Robot.oi.xbox.getRawAxis(4);
-        Robot.lifterMechanism.liftRobot(suckValue);
+        Robot.ballSuckerMechanism.setSpeed(suckValue);
         
 
         

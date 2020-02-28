@@ -59,7 +59,7 @@ public class BallSuckerMechanism extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     
-    public void setSpeed(int speed){
+    public void setSpeed(double speed){
         victor1.set(speed);
     }
 
