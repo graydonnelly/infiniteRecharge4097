@@ -48,9 +48,13 @@ public class BallSuckerCommand extends Command {
         //SLIDERMIN is the speed of the robot when the slider is all the way back
         //SLIDERMAX is the speed of the robot when the slider is all
         //the way forwards
-        double suckValue = Robot.oi.xbox.getRawAxis(4);
-        Robot.ballSuckerMechanism.setSpeed(suckValue);
+        double suckValueL = Robot.oi.xbox.getRawAxis(2);
+        double suckValueR = Robot.oi.xbox.getRawAxis(3);
+        Robot.ballSuckerMechanism.setSpeed(suckValueL - suckValueR);
         
+        
+        
+
 
         
     }

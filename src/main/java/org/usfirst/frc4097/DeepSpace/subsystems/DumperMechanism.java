@@ -57,7 +57,7 @@ public class DumperMechanism extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     public void dumpBalls(){
-        servo0.setAngle(90);
+        servo0.setAngle(180);
     }
 
     public void undumpBalls(){
